@@ -1,0 +1,58 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.home {
+  padding: 0 10px;
+}
+.searchBox{
+    width: 100%;
+    padding: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+.flex-wrp {display: flex;}
+.flex-item{
+    flex: 1;
+    height: 50px;
+    border-radius: 4px;
+    padding: 4px;
+    text-align: center;
+    line-height: 50px;
+}
+.bg_female,.bg_male,.bg_picture,.bg_press{
+    position: relative;
+}
+.flex_title{
+    position: absolute;
+    left: 50%;
+    margin-left: -14px;
+    color: #fff;
+}
+.bookTypeBox{
+    padding: 8px;
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 1px solid #e1e1e1;
+    margin-left: -1px;
+    margin-bottom: -1px;
+}
+.bookTypeContent{
+    background: #fff;
+    overflow: hidden;
+    position: relative
+}
+.bookTypeBoxName{
+    position: absolute;
+    padding: 10px; 
+    left: 0;bottom: 0;
+    background: #666;
+    width: 100%;
+    opacity: .7;
+    color: #fff;
+}

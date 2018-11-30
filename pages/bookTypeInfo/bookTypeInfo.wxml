@@ -1,0 +1,48 @@
+<!--pages/bookTypeInfo/bookTypeInfo.wxml-->
+<view class="container">
+     <view class="searchBox">
+        <view class="searchBoxItem">
+            <text wx:for="{{bookSearchList}}"  
+                data-searchType="{{item.value}}"
+                bindtap="changeSearch" 
+                class="searchType {{item.value == searchType ? 'active' : ''}}"
+                key="{{item}}">{{item.name}}
+            </text>
+        </view>
+        <view class="searchBoxItem">
+            <text wx:for="{{bookMinor}}"  
+                data-minor="{{item}}"
+                bindtap="changeSearch"  
+                class="searchType {{item == minor ? 'active' : ''}}" 
+                key="{{item}}">
+                {{item || '全部'}}
+            </text>
+        </view>
+    </view>
+    <block wx:if="{{bookTypeInfo && bookTypeInfo.books && bookTypeInfo.books.length}}">
+        <view  class="booksInfo">
+            <view wx:for="{{bookTypeInfo.books}}" class="booksInfoBox" key="{{item.title}}">
+                <navigator url="../bookDetail/bookDetail?book={{ item._id }}&sourceId=1">
+                    <view class="booksImg">
+                        <image style="width:100%;height:100%" src="http://statics.zhuishushenqi.com{{item.cover}}" alt=""/>
+                    </view>
+                    <view class="booksTitleBox">
+                        <view class="booksName">{{item.title}}</view>
+                        <view class="booksAuthor">{{item.author}} &nbsp;|&nbsp; {{item.majorCate}}</view>
+                        <view class="booksDesc" >{{item.shortIntro}}</view>
+                        <view class="booksKeep"> 
+                            <text class="redColor">{{item.latelyFollower}}</text>
+                            人气 | <text class="redColor">{{item.retentionRatio}}%</text>读者留存 
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+    </block>
+    <block wx:else>
+       <view style="textAlign: center; padding: 4px 0">
+            <i-load-more />
+            <!-- <i-load-more tip="数据加载中" loading="{{ false }}" /> -->
+        </view>
+    </block>
+</view>
