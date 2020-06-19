@@ -7,7 +7,7 @@ Page({
      */
     data: {
         bookType: 'female',
-        searchType: 'hot',
+        type: 'hot',
         minor: '',
         bookTypeInfo: {},
         bookSearchList: [
@@ -106,7 +106,7 @@ Page({
         })
         let obj = {
             ...this.options,
-            "type": this.data.searchType,
+            "type": this.data.type,
             "minor": this.data.minor
         }
         app.zhuishu.getData('zhuishuApi/categoryInfo', obj).then(data => {

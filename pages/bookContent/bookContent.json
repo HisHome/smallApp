@@ -1,0 +1,14 @@
+{
+    "usingComponents": {
+        "i-button": "../../iview/button/index",
+        "i-drawer": "../../iview/drawer/index",
+        "i-load-more": "../../iview/load-more/index",
+        "i-action-sheet": "../../iview/action-sheet/index",
+        "i-message": "../../iview/message/index"
+    },
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#eee6dd",
+    "navigationBarTitleText": "章节内容",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+}

@@ -1,63 +1,51 @@
 <!--index.wxml-->
 <view class="container">
     <view class="home">
-        <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-        <block wx:else>
-            <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-            <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-        </block> -->
         <view class="searchBox">
-            <input placeholder="输入书名、作者" auto-focus/>
+            <input placeholder="输入书名、作者搜索" auto-focus bindinput="getSearchContent" bindconfirm="submitSearchBoolOrAuthor" />
         </view>
-        <view class="section">
-            <view class="flex-wrp" style="flex-direction:row;">
-                <view class="flex-item bg_female">
-                    <image style='width:100%;height:100%;' src="../../img/index1.png" mode="aspectFill"/>
-                    <text class="flex_title">女生</text>
-                </view>
-                <view class="flex-item bg_male">
-                    <image style='width:100%;height:100%;' src="../../img/index2.png" mode="aspectFill"/>
-                    <text class="flex_title">男生</text>
-                </view>
-                <view class="flex-item bg_picture">
-                    <image style='width:100%;height:100%;' src="../../img/index3.png" mode="aspectFill"/>
-                    <text class="flex_title">漫画</text>
-                </view>
-                <view class="flex-item bg_press">
-                    <image style='width:100%;height:100%;' src="../../img/index4.png" mode="aspectFill"/>
-                    <text class="flex_title">出版</text>
-                </view>
-                <view class="flex-item bg_press">
-                    <image style='width:100%;height:100%;' src="../../img/index4.png" mode="aspectFill"/>
-                    <text class="flex_title">排行</text>
+        <view class="flex-wrp" style="flex-direction:row;">
+            <view wx:for="{{bookTypeTitleList}}" 
+                data-booktype="{{item.type}}" 
+                data-index="{{index}}" 
+                bindtap="changeTookType" 
+                class="flex-item bg_{{item.type}}"
+                wx:key="{{index}}" 
+            >
+                <view class="flex_box">
+                    <view class="mask {{bookType == item.type ? 'maskActive' : '' }}"></view>
+                    <image style="width:100%;height:100%; filter:{{bookType == item.type ? 'blur(0px)' : 'blur(4px)' }}" src="../../img/{{item.imgName}}.png" mode="aspectFill"/>
+                    <text class="flex_title">{{item.title}}</text>
                 </view>
             </view>
-            
-            <view >
-                <block  wx:if="{{bookTypeList && bookTypeList[bookType] && bookTypeList[bookType].length }}">
-                    <block wx:for="{{bookTypeList[bookType]}}"  wx:key="bookCount">
-                        <view class="bookTypeBox">
-                            <navigator url="../bookTypeInfo/bookTypeInfo?gender={{ bookType }}&major={{ item.name }}&type=hot">
-                                <view class="bookTypeContent">
-                                    <view class="bookTypeBoxName">
+        </view>
+        <view class="bookList">
+            <block  wx:if="{{bookTypeList && bookTypeList[bookType] && bookTypeList[bookType].length }}">
+                <block wx:for="{{bookTypeList[bookType]}}"  wx:key="bookCount">
+                    <view class="bookTypeBox">
+                        <navigator url="../bookTypeInfo/bookTypeInfo?gender={{ bookType }}&major={{ item.name }}&type=hot">
+                            <view class="bookTypeContent">
+                                <view class="bookTypeBoxNameBackground">
+                                    <view class="bookTypeBoxNameHide">
                                         <text >{{item.name}}</text>
                                         <view >共{{item.bookCount}}本</view>
                                     </view>
-                                    <view style="height: 180px; overflow: hidden">
-                                        <image style="width: 100%;" src="http://statics.zhuishushenqi.com{{ item.bookCover[0] }}" />
-                                    </view>
                                 </view>
-                            </navigator>
-                        </view>
-                    </block>
-                </block>
-                <block wx:else>
-                    <view style="textAlign: center; padding: 4px 0">
-                        <i-load-more />
-                        <!-- <i-load-more tip="数据加载中" loading="{{ false }}" /> -->
+                                <view class="bookTypeBoxName">
+                                    <text >{{item.name}}</text>
+                                    <view >共{{item.bookCount}}本</view>
+                                </view>
+                                <view class="book_img">
+                                    <image style="width: 100%;" src="http://statics.zhuishushenqi.com{{ item.bookCover[0] }}" />
+                                </view>
+                            </view>
+                        </navigator>
                     </view>
                 </block>
-            </view>
+            </block>
+        </view>
+        <view>
+            <i-load-more loading="{{ false }}" />
         </view>
     </view>
 </view>

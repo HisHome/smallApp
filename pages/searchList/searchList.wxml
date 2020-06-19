@@ -1,0 +1,18 @@
+<!--pages/searchList.wxml-->
+<view class="container">
+    <view class="content">
+        <view class="searchBox">
+            <input value="{{serachContent}}" placeholder="输入书名、作者搜索" auto-focus bindinput="getSearchContent" bindconfirm="submitSearchBoolOrAuthor" />
+        </view>
+        <view class="searchList">
+            <navigator 
+                wx:for="{{searchList}}" 
+                class="book-item"
+                wx:key="{{index}}"  
+                url="../bookDetail/bookDetail?id={{ item._id }}">
+                <text >{{item.title}}</text>
+                <text class="book-author">{{item.author}}</text>
+            </navigator>
+        </view>
+    </view>
+</view>

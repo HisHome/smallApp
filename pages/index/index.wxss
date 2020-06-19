@@ -1,58 +1,123 @@
 /**index.wxss**/
+
 .userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
 .home {
-  padding: 0 10px;
+    padding: 0 10px;
 }
-.searchBox{
+
+.searchBox {
     width: 100%;
-    padding: 4px;
+    padding: 8px;
     border: 1px solid #ccc;
     box-sizing: border-box;
-    border-radius: 4px;
+    border-radius: 40px;
+    padding-left: 20px;
 }
-.flex-wrp {display: flex;}
-.flex-item{
+
+.flex-wrp {
+    display: flex;
+}
+
+.flex-item {
     flex: 1;
-    height: 50px;
-    border-radius: 4px;
     padding: 4px;
-    text-align: center;
-    line-height: 50px;
 }
-.bg_female,.bg_male,.bg_picture,.bg_press{
+
+.flex_box {
+    border-radius: 10px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    overflow: hidden;
     position: relative;
 }
-.flex_title{
+
+.bg_female,
+.bg_male,
+.bg_picture,
+.bg_press {
+    position: relative;
+}
+
+.flex_title {
     position: absolute;
     left: 50%;
     margin-left: -14px;
     color: #fff;
 }
-.bookTypeBox{
-    padding: 8px;
+
+.bookList {
+    border: 1px solid #eaeaea;
+    padding: 6px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.bookTypeBox {
     width: 50%;
     float: left;
+    overflow: hidden;
+    padding: 8px;
     box-sizing: border-box;
-    overflow: hidden;
-    border: 1px solid #e1e1e1;
-    margin-left: -1px;
-    margin-bottom: -1px;
 }
-.bookTypeContent{
+
+.book_img {
+    height: 180px;
+    overflow: hidden;
+}
+
+.bookTypeContent {
     background: #fff;
+    border: 1px solid #eaeaea;
+    position: relative;
+    border-radius: 8px;
     overflow: hidden;
-    position: relative
 }
-.bookTypeBoxName{
+
+.bookTypeBoxName {
     position: absolute;
-    padding: 10px; 
-    left: 0;bottom: 0;
-    background: #666;
+    padding: 4px 10px;
+    left: 0;
+    bottom: 0;
     width: 100%;
-    opacity: .7;
-    color: #fff;
+    color: #666;
+    border-top: 1px solid #eaeaea;
+    box-sizing: border-box;
+}
+
+.bookTypeBoxNameHide {
+    opacity: 0;
+}
+
+.bookTypeBoxNameBackground {
+    position: absolute;
+    padding: 4px 10px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background: #e4e4e4;
+    opacity: 0.9;
+    box-sizing: border-box;
+}
+
+.mask {
+    height: 100%;
+    width: 100%;
+    opacity: 0.5;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.maskActive {
+    opacity: 0;
+    filter: blur(0px);
 }

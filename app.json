@@ -2,12 +2,17 @@
     "pages": [
         "pages/index/index",
         "pages/logs/logs",
-        "pages/bookTypeInfo/bookTypeInfo"
+        "pages/bookTypeInfo/bookTypeInfo",
+        "pages/rank/rank",
+        "pages/searchList/searchList",
+        "pages/bookDetail/bookDetail",
+        "pages/bookContent/bookContent"
     ],
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "WeChat",
+        "navigationBarTitleText": "小说查询",
         "navigationBarTextStyle": "black"
-    }
+    },
+    "sitemapLocation": "sitemap.json"
 }

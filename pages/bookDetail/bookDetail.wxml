@@ -1,0 +1,70 @@
+<!--viewages/bookDetail/bookDetail.wxml-->
+<view class="container">
+        <view  class="booksInfo">
+                <i-message id="message" />
+                <view class="center">
+                    <view class="imgBox">
+                        <image class="img" src='http://statics.zhuishushenqi.com{{bookDetail.cover}}' alt=""/>
+                    </view>
+                    <view>
+                        <view class="bookName">{{bookDetail.title}}</view>
+                        <view class="booksAuthor">{{bookDetail.author}}</view>
+                    </view>
+                    <view class="bookBtnBox">
+                        <button bind:tap="addBook" class="bookBtn" type="default" >加入书架</button>
+                        <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;</text>
+                        <button class="bookBtn" type="warn" bind:tap="startRead" data-id="{{bookDetail._id}}">开始阅读</button>
+                    </view>
+                </view>
+                <view class="bookInfoBox">
+                    <view class="bookTips center">
+                        <view>
+                            字数:{{bookDetail.wordCount}}
+                            <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
+                            <text class="isOver">{{bookDetail.isSerial ? '连载中' : '完结'}}</text>
+                        </view>
+                        <view>
+                            人气:{{bookDetail.latelyFollower}}
+                            <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
+                            留存率:{{bookDetail.retentionRatio}}%
+                            <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
+                            字数/天:{{bookDetail.serializeWordCount}}
+                        </view>
+                    </view>
+                    <view class="bookDesc">
+                        {{bookDetail.longIntro}}
+                    </view>
+                    <view class="catalogue">
+                        最新章节 <text class="pull-right">{{bookDetail.lastChapter}}</text>
+                    </view>
+                    <view class="bookReviews">
+                        <view class="bookHotTitle">
+                            <text>热门书评</text>
+                            <!-- <navigator
+                                class="pull-right"
+                                url="/page/navigate/navigate?title=navigate"
+                                hover-class="navigator-hover"
+                            >
+                                更多书评
+                            </navigator> -->
+                        </view>
+                        <view wx:for="{{bookReview.reviews}}" class="bookReviewBox" key="{{index}}">
+                            <view class="pull-left bookReviewImg">
+                                <image class="bookReviewUserImg" src='http://statics.zhuishushenqi.com{{item.author.avatar}}' alt=""/>
+                            </view>
+                            <view class="bookReviewInfo">
+                                <view class="nickname">{{item.author.nickname}}</view>
+                                <view class="bookReviewTitle">{{item.title}}</view>
+                                <text wx:for="{{item.rating || 0}}" wx:for-index="sindex"  key="{{sindex}}" class="stars iconfont icon-ditu-xing"></text>
+                                <text wx:for="{{5- (item.rating || 0) }}"  wx:for-index="ssindex"  key="{{ssindex}}" class="stars iconfont icon-xingzhuang-xingxing"></text>
+                                <view class="bookReviewContent">
+                                   {{item.content}}
+                                </view>
+                            </view>
+                        </view>
+
+                    </view>
+                </view>
+        </view>
+</view>
+

@@ -3,9 +3,9 @@
      <view class="searchBox">
         <view class="searchBoxItem">
             <text wx:for="{{bookSearchList}}"  
-                data-searchType="{{item.value}}"
+                data-type="{{item.value}}"
                 bindtap="changeSearch" 
-                class="searchType {{item.value == searchType ? 'active' : ''}}"
+                class="searchType {{item.value == type ? 'active' : ''}}"
                 key="{{item}}">{{item.name}}
             </text>
         </view>
@@ -22,13 +22,13 @@
     <block wx:if="{{bookTypeInfo && bookTypeInfo.books && bookTypeInfo.books.length}}">
         <view  class="booksInfo">
             <view wx:for="{{bookTypeInfo.books}}" class="booksInfoBox" key="{{item.title}}">
-                <navigator url="../bookDetail/bookDetail?book={{ item._id }}&sourceId=1">
+                <navigator url="../bookDetail/bookDetail?id={{ item._id }}">
                     <view class="booksImg">
                         <image style="width:100%;height:100%" src="http://statics.zhuishushenqi.com{{item.cover}}" alt=""/>
                     </view>
                     <view class="booksTitleBox">
                         <view class="booksName">{{item.title}}</view>
-                        <view class="booksAuthor">{{item.author}} &nbsp;|&nbsp; {{item.majorCate}}</view>
+                        <view class="booksAuthor">{{item.author}} | {{item.majorCate}}</view>
                         <view class="booksDesc" >{{item.shortIntro}}</view>
                         <view class="booksKeep"> 
                             <text class="redColor">{{item.latelyFollower}}</text>

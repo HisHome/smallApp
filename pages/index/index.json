@@ -1,8 +1,8 @@
 {
-  "usingComponents": {
-    "i-button": "../../dist/button/index",
-    "i-input": "../../dist/input/index",
-    "i-icon": "../../dist/icon/index",
-    "i-load-more": "../../dist/load-more/index"
-  }
+    "usingComponents": {
+        "i-button": "../../iview/button/index",
+        "i-input": "../../iview/input/index",
+        "i-icon": "../../iview/icon/index",
+        "i-load-more": "../../iview/load-more/index"
+    }
 }

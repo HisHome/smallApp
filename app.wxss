@@ -1,4 +1,7 @@
 /**app.wxss**/
+
+@import "/icon/ali.wxss";
+
 .container {
   height: 100%;
   /* display: flex;
@@ -8,3 +11,15 @@
   box-sizing: border-box;
   font-size: 14px;
 } 
+.center{
+    text-align: center;
+}
+.pull-left{
+    float: left;
+}
+.pull-right{
+    float: right;
+}
+.overflow{
+    overflow: hidden;
+}

@@ -1,0 +1,25 @@
+<!--viewages/bookContent/bookContent.wxml-->
+<view class="container">
+        <view  class="booksContent" bindlongtap="handleOpen">
+            <i-message id="message" />
+             <view wx:for="{{bookContentList}}" class="chapterBox" wx:for-item="item" wx:key="index">
+                <view>
+                    <view class="chapterTitle  {{'font'+fontSize}}">{{item.chapter ? item.chapter.title : ''}}</view>
+                    <view>
+                        <view wx:for="{{ item.chapter.cpContentList }}"  wx:for-item="sitem"  class="chapterContent {{'font'+fontSize}}">{{ sitem }}</view>
+                    </view>
+                </view>
+            </view>
+            <i-drawer mode="left" visible="{{showLeft}}" bind:close="toggleLeft">
+                <view class="drawer-container" >
+                     <view wx:for="{{bookChapterList}}"  wx:key="index" bind:tap="chanageChapter" data-startnum="{{index}}" data-link="{{item.link}}"  class="item-container">
+                        {{item.title}}
+                    </view>
+                </view>
+            </i-drawer>
+            <i-action-sheet visible="{{ visible }}" actions="{{ actions }}" show-cancel bind:cancel="handleCancel" bind:click="handleClickItem" />
+                
+        </view>
+</view>
+
+

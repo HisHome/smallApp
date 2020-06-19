@@ -1,0 +1,24 @@
+/* pages/searchList.wxss */
+.content {
+    padding: 0 10px;
+  }
+  .searchBox{
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      border-radius: 40px;
+      padding-left: 20px;
+  }
+  .searchList{
+    padding-top: 20px;
+  }
+  .book-item{
+      border-bottom: 1px solid #eaeaea;
+      border-top: 1px solid #eaeaea;
+      padding: 10px 20px;
+      margin-bottom: -1px
+  }
+  .book-author{
+      float: right;
+  }

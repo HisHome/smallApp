@@ -1,0 +1,132 @@
+/* pages/bookDetail/bookDetail.wxss */
+
+.imgBox {
+    width: 200px;
+    height: 250px;
+    /* background: #c25757; */
+    border: 1px solid #ccc;
+    display: inline-block;
+    box-shadow: 0px 0px 12px 4px #e1e1e1;
+}
+
+.imgBox .img {
+    width: 100%;
+    height: 100%;
+}
+
+.bookName {
+    padding: 10px;
+    margin-top: 16px;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.booksAuthor {
+    color: #444;
+}
+
+.bookInfoBox {
+    padding: 0 15px;
+    background: #f5f5f5;
+}
+
+.bookBtnBox {
+    padding: 20px 0;
+}
+
+.bookBtn {
+    width: 160px;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    border-radius: 100px;
+    box-shadow: 4px 4px 8px 0px #e1e1e1;
+    overflow: hidden;
+}
+
+.bookBtn::after {
+    border: none;
+}
+
+.bookTips {
+    padding: 10px 0;
+    font-size: 14px;
+    color: #666;
+    line-height: 20px;
+}
+
+.bookTips .isOver {
+    color: #5dc430;
+}
+
+.bookDesc {
+    background: #fff;
+    border-radius: 6px;
+    padding: 15px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    line-height: 20px;
+    color: #777;
+}
+
+.catalogue {
+    background: #fff;
+    border-radius: 6px;
+    padding: 15px;
+    font-size: 13px;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.bookReviews {
+    background: #fff;
+    border-radius: 6px;
+    padding: 15px;
+    color: #666;
+}
+
+.bookHotTitle {
+    padding-bottom: 15px;
+    font-size: 13px;
+}
+
+.bookReviewImg {
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.bookReviewUserImg {
+    width: 100%;
+    height: 100%;
+}
+
+.bookReviewBox {
+    padding: 20px 0;
+    border-top: 1px solid #ececec;
+}
+
+.bookReviewInfo {
+    margin-left: 74px;
+    line-height: 20px;
+    font-size: 13px;
+}
+
+.nickname {
+    color: #fe5a1d;
+    font-size: 13px;
+}
+
+.bookReviewTitle {
+    font-weight: 800;
+}
+
+.bookReviewContent {
+    line-height: 20px;
+    color: #777;
+}
+
+.stars {
+    color: orange
+}

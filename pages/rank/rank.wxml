@@ -1,0 +1,72 @@
+<!--pages/rank/rank.wxml-->
+ <view class="rankingBox">
+    <!-- <NavBar
+        mode="light"
+        icon={ <Link to={{
+                pathname:'/'
+            }}>
+            <Icon type="left" />
+        </Link> }
+        rightContent={null}
+        >排行榜</NavBar> -->
+    <view wx:if="{{bookRanking && bookRanking.male}}">
+        <view class="rankType">男生</view>
+        <view class="rankType" wx:for="{{bookRanking.male}}">
+            <view wx:if="{{index === 7}}" wx:key="index" class="searchBoxItem overflow" >
+                <span  class="pull-left rankingOther" ></span>
+                <span class="pull-left" style="padding: 18px 0 0 12px">别人家的排行榜</span>
+                <span class="pull-right" style="paddingTop: 5px" >ddd </span>
+            </view>
+            <view wx:elif="{{index < 7}}" wx:key="index" class="searchBoxItem overflow" >
+                <navigator url="../bookRankInfo/bookRankInfo?id={{ item._id }}">
+                    <view class="bookTypeContent">
+                        <view class="searchBoxItem overflow">
+                            <image class="pull-left" width="34" src="http://statics.zhuishushenqi.com{{item.cover}}" alt=""/>
+                            <text class="pull-left" style="padding: 18px 0 0 12px">{{item.title}}</text>
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+            <view wx:else wx:key="index" class="searchBoxItem overflow" >
+                <navigator url="../bookRankInfo/bookRankInfo?id={{ item._id }}">
+                    <view class="bookTypeContent">
+                        <view class="searchBoxItem overflow">
+                            <text class="pull-left rankingNull" ></text>
+                            <text class="pull-left" style="padding: 18px 0 0 12px">{{item.title}}</text>
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{bookRanking && bookRanking.female}}">
+        <view class="rankType">女生</view>
+        <view class="rankType" wx:for="{{bookRanking.male}}">
+            <view wx:if="{{index === 7}}" wx:key="index" class="searchBoxItem overflow" >
+                <span class="pull-left rankingOther" ></span>
+                <span class="pull-left" style="padding: .18px0 0 12px">别人家的排行榜</span>
+                <span class="pull-right" style="paddingTop: 6px" >xxx </span>
+            </view>
+            <view wx:elif="{{index < 7}}" wx:key="index" class="searchBoxItem overflow" >
+                <navigator url="../bookRankInfo/bookRankInfo?id={{ item._id }}">
+                    <view class="bookTypeContent">
+                        <view class="searchBoxItem overflow">
+                            <image class="pull-left" width="34" src="http://statics.zhuishushenqi.com{{item.cover}}" alt=""/>
+                            <text class="pull-left" style="padding: 18px 0 0 12px">{{item.title}}</text>
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+            <view wx:else wx:key="index" class="searchBoxItem overflow" >
+                <navigator url="../bookRankInfo/bookRankInfo?id={{ item._id }}">
+                    <view class="bookTypeContent">
+                        <view class="searchBoxItem overflow">
+                            <text class="pull-left rankingNull" ></text>
+                            <text class="pull-left" style="padding: 18px 0 0 12px">{{item.title}}</text>
+                        </view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</view>
